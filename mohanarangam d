@@ -30,6 +30,7 @@ public class bookacar {
 				
 				// Step 5: Add implicit wait
 				
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 						 
 			 //Click on book a car
 			 
