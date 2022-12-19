@@ -1,0 +1,122 @@
+package Hyundaiprojectsai;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+
+
+
+public class bookacar {
+
+	public static void main(String[] args) throws InterruptedException {
+			
+		WebDriverManager.firefoxdriver().setup();
+			FirefoxDriver driver = new FirefoxDriver();
+			 
+			//Launch the browser
+			 driver.get("https://clicktobuy.hyundai.co.in/#/new-cars");
+			 
+			// Step 4: Maximise the window
+				
+				driver.manage().window().maximize();
+				
+				// Step 5: Add implicit wait
+				
+						 
+			 //Click on book a car
+			 
+			 driver.findElement(By.xpath("//button[@class='buttonbook']")).click();
+			 
+			 //select on all Model drop down 
+			 
+			 WebElement element = driver.findElement(By.xpath("//select[@class='w-100 forminput']"));
+			 
+			 Select dd = new Select(element);
+			 
+			 List<WebElement> options = dd.getOptions();
+			 
+			 int size = options.size();
+			 
+			 System.out.println(size);
+			 
+			 for (int i = 0; i <options.size() ; i++) {
+				 
+				 Thread.sleep(2000);
+				 
+				 if (i==1) {
+				 
+				 options.get(i).click();
+				 
+				 //click on the Fuel Type drop down
+				 
+				 WebElement text=driver.findElement(By.xpath("(//select[@class='w-100 forminput'])[2]"));
+				 Select drop2=new Select(text);
+				 drop2.selectByVisibleText("Petrol");
+				 
+            //click on the Variant drop down
+				 
+				 WebElement text1=driver.findElement(By.xpath("(//select[@class='w-100 forminput'])[3]"));  
+				 Select drop3=new Select(text1);
+				 drop3.selectByVisibleText("VENUE N Line N6 1.0 Turbo DCT");
+				 
+				 
+//click on the Exterior Color drop down
+				 
+				 WebElement text2=driver.findElement(By.xpath("(//select[@class='w-100 forminput'])[4]"));  
+				 Select drop4=new Select(text2);
+				 drop4.selectByVisibleText("Polar White");
+				 
+//click on the Interior Color drop down
+				 
+				 WebElement text3=driver.findElement(By.xpath("(//select[@class='w-100 forminput'])[5]"));  
+				 Select drop5=new Select(text3);
+				 drop5.selectByVisibleText("Obsidian Black");
+				 
+				 
+//click on the  Dealer State drop down
+				 
+				 WebElement text4=driver.findElement(By.xpath("(//select[@class='w-100 forminput'])[6]"));  
+				 Select drop6=new Select(text4);
+				 drop6.selectByVisibleText("Tamilnadu");
+				 
+				 
+//click on the Dealer City State drop down
+				 
+				 WebElement text5=driver.findElement(By.xpath("(//select[@class='w-100 forminput'])[7]"));  
+				 Select drop7=new Select(text5);
+				 drop7.selectByVisibleText("Chennai");
+				 
+				 
+//click on the Dealer Name drop down
+				 
+				 WebElement text6=driver.findElement(By.xpath("(//select[@class='w-100 forminput'])[8]"));  
+				 Select drop8=new Select(text6);
+				 drop8.selectByVisibleText("KUN CHENNAI-CHENNAI- D - 6, AMBATTUR INDL.ESTATE");
+			 driver.findElement(By.xpath("//div[@class='estimated-monthly-instalment']//div"));
+			 
+			 		 
+			 
+				 
+				 }
+	}
+}
+
+}
+			 
+		
+		
+			 
+
+
+
+
+
+
