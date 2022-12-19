@@ -23,6 +23,7 @@ public class apiautomation {
 			
 			driver.manage().window().maximize();
 		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
 			//Clicks on Get method
 			driver.findElement(By.xpath("//li[@data-http='get']")).click();
